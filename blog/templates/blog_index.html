@@ -1,0 +1,38 @@
+{% extends "base_content.html" %}
+{% load pager %}
+{% load entrySummary %}
+{% block title %}
+{% if catelog %}
+{% ifequal catelog.name 'DEFAULT_CATELOG' %}
+	未分类
+{% else %}
+	{{catelog.name}}
+{% endifequal%}
+--{% endif%}
+{% if tag %}{{tag.name}}--{% endif%}
+{{blog.caption}}
+{% endblock %}
+
+
+<!-- 开始文章列表 -->
+{% block content %}
+{% if catelog %}
+<div id="path"><a href="/blog/{{blog.shortcut}}/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;{{catelog.name}}</div>
+{% endif%}
+{%if tag%}
+<div id="path"><a href="/blog/{{blog.shortcut}}/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;{{tag.name}}</div>
+{% endif%}
+{% if entries %}
+{% for entry in entries %}
+<div class="content">
+<a href="/blog/{{blog.shortcut}}/{{entry.id}}/"><h1>{{entry.title}}</h1></a>
+{% entry_summary entry user %}
+{{entry.content|safe}}
+</div>
+{% endfor %}
+{% page_info pager url %}
+{% else %}
+&nbsp;
+{% endif %}
+{% endblock %}
+<!-- 结束文章列表 -->

@@ -1,0 +1,298 @@
+/*#############################################################
+Name: Indigo
+Description: A lightweight (7kb images), simple and professional design.
+Date: 2006-07-27
+Author: Viktor Persson
+URL: http://arcsin.se
+
+Feel free to use and modify but please provide credits.
+#############################################################*/
+
+/* standard elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #F70;
+	text-decoration: none;
+}
+a:hover {
+	color: #C60;
+}
+
+img {
+    border: 0;
+}
+body {
+	background: url(/resource/img/bg.gif) repeat-x;
+	color: #466;
+    font-family: Arial, sans-serif, Helvetica, Tahoma;
+    font-size: 12px;
+	margin: 0;
+}
+.input {
+	color: #555;
+	font-family: Arial, sans-serif, Helvetica, Tahoma;
+    font-size: 12px;
+    border: 3px double black;
+}
+textarea{
+    border: 3px double #E5E5E5;
+}
+
+
+h1 {
+	font-size: 1.4em;
+	margin-bottom: 4px;
+}
+code {
+	background: url(/resource/img/bgcode.gif);
+	border: 1px solid #F0F0F0;
+	border-left: 6px solid #39F;
+	color: #555;
+	display: block;
+	font: normal 1.1em "Lucida Sans Unicode",serif;
+	margin-bottom: 12px;
+	padding: 8px 10px;
+	white-space: pre;
+}
+cite {
+	background: url(/resource/img/quote.gif) no-repeat;
+	color: #666;
+	display: block;
+	padding-left: 28px;
+}
+.content ul{
+	padding-left:40px;
+	margin-bottom:10px;
+}
+
+.content ol{
+	padding-left:40px;
+	margin-bottom:10px;
+}
+
+.content li{
+    margin-bottom: 5px;
+}
+
+h1,h2,h3 {
+	color: #06C;
+	padding-top: 6px;
+}
+/* misc */
+.clearer {
+	clear: both;
+}
+
+/* structure */
+.container {
+	background: url(/resource/img/topleft.gif) no-repeat;
+}
+
+.header {
+	height: 92px;
+}
+
+/* title */
+.title {
+	float: left;
+	padding: 28px 0 0 76px;
+}
+.title h1 {
+	color: #FFF;
+	font-family: Arial, sans-serif, Helvetica, Tahoma;
+    font-size: 24px;
+}
+.title a{
+	text-decoration: none;
+}
+/* navigation */
+.navigation {
+	float: left;
+	height: 92px;
+	margin-left: 24px;
+	padding: 0 16px;
+}
+.navigation a {
+	color: #FFF;
+	float: left;
+	font: bold 1.2em "Trebuchet MS",sans-serif;
+	margin-top: 56px;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+}
+.navigation a:hover {
+	background-color: #4A91C3;
+	color: #FFF;
+}
+
+.current_tag{
+	background-color: #4A91C3;
+	color: #FFF;
+}
+
+/* main */
+.main {
+	background: #FFF url(/resource/img/bgmain.gif) no-repeat;
+	clear: both;
+	padding: 12px 12px 0 52px;
+}
+
+/* main left */
+.sidenav {
+	float: left;
+	width: 24%;
+}
+.sidenav h1 {
+	border-bottom: 1px dashed #DDD;
+	color: #E73;
+	font-size: 12px;
+	height: 20px;
+	margin-top: 12px;
+}
+.sidenav ul {
+	margin: 0;
+	padding: 0;
+}
+.sidenav li { 
+	border-bottom: 1px dashed #EEE;
+	list-style: none;
+	margin: 0;
+}
+.sidenav li a {
+	color: #777;
+	display: block;
+	font-size: 12px;
+	padding: 3px 6px 3px 18px;
+	text-decoration: none;
+}
+.sidenav li a:hover {
+	color: #111;
+	background: url(/resource/img/nav_li.gif) no-repeat;
+}
+
+.body_content{
+	float: left;
+	margin-right: 4%;
+	width: 69%;
+}
+
+/* content */
+.content {
+	float: left;
+	width: 100%;
+}
+
+    .content a{
+	   text-decoration: none;
+    }
+
+    .content .descr {
+	   color: #C60;
+	   margin-bottom: 10px;
+	   border-bottom: dashed 1px;
+    }
+    
+    .content .frame{
+       padding: 5px;
+       background: white;
+       border: 1px solid #DDD;
+       margin: 5px 20px 7px 0;
+    }
+
+
+/* comment */
+.comment_list{
+	float: left;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.comment_form{
+	float: left;
+	margin-top: 15px;
+	width:100%;
+}
+
+/* search form */
+.styled {
+	border: 3px double #E5E5E5;
+	padding: 2px 3px;
+}
+
+
+/* footer */
+.footer {
+	background: #0094D6 url(/resource/img/bgfooter.gif) repeat-x;
+	color: #C1DEF0;
+	font-size: 11px;
+	line-height: 40px;
+	text-align: center;
+}
+.footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+.info{
+	float: right;
+	font: normal 15px Verdana,sans-serif;
+	margin-right: 20px;
+	margin-top: 15px;
+	color: White;
+}
+
+.body{
+	margin-top: 15px;
+}
+p{
+	padding-bottom: 10px;
+	line-height: 20px;
+}
+#power{
+	margin-top: 15px;
+}
+
+#pager{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#pager a{
+	color: #06C;
+	text-decoration: none;
+}
+
+.entry_comment{
+    background-color: #eeeee8;
+    border: 4px solid #d4d4cb;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 5px;
+}
+    .metadata{
+        margin-bottom: 5px;
+    }
+
+
+fieldset{
+    padding: 10px;
+    border: 4px solid #d4d4cb;
+    background: #eeeee8;
+}
+
+legend{
+    font-size: 15px;
+}
+
+.tag_0{font-size: 1em;color: #777;line-height: 22px;padding-right: 3px;}
+.tag_1{font-size: 1.2em;color: #777;line-height: 22px;padding-right: 3px;}
+.tag_2{font-size: 1.5em;color: #777;line-height: 22px;padding-right: 3px;}
+.tag_3{font-size: 1.8em;color: #777;line-height: 22px;padding-right: 3px;}
+.tag_4{font-size: 2.1em;color: #777;line-height: 27px;padding-right: 5px;}
+.tag_5{font-size: 2.4em;color: #777;line-height: 32px;padding-right: 8px;}

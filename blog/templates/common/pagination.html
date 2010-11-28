@@ -1,0 +1,22 @@
+<div id="pager">
+
+{% if pager.is_begin%}
+
+{%else%}
+
+<a href="{{url}}?p={{pager.first_page}}"><strong>&lt;&lt;第一页</strong></a>&nbsp;&nbsp;
+
+<a href="{{url}}?p={{pager.pre_page}}"><strong>&lt;上一页</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+{%endif%}
+{% if pager.is_end%}
+
+{%else%}
+
+<a href="{{url}}?p={{pager.next_page}}"> <strong>下一页&gt;</strong></a>&nbsp;&nbsp;
+
+<a href="{{url}}?p={{pager.last_page}}"> <strong>最后一页&gt;&gt;</strong></a>
+
+{% endif %}
+
+</div>

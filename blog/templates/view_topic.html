@@ -1,0 +1,108 @@
+{% extends "base_content.html" %}
+{% load entrySummary %}
+{%load dateFormat %}
+
+{% block title %}
+{{entry.title}}--{{blog.caption}}
+{% endblock %}
+
+{% block script %}
+<script language="JavaScript" src="/resource/js/jquery.form.js"></script>
+<script language="JavaScript" src="/resource/js/jquery.corner.js"></script>
+<script language="JavaScript" src="/resource/js/view.js"></script>	
+{% endblock %}
+
+{% block content %}
+<!-- 面包碎开始 -->
+<div id="path"><a href="/blog/{{blog.shortcut}}/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/{{blog.shortcut}}/catelog/{{entry.catelog.id}}/">{{entry.catelog.name}}</a>&nbsp;&nbsp;»&nbsp;&nbsp;{{entry.title}}</div>
+<div class="content">
+<!-- 面包碎结束 -->
+
+<!-- 正文开始 -->
+<h1>{{entry.title}}</h1>
+{% entry_summary entry user %}
+{{entry.content|safe}}
+<br/><br/>&lt;EOF&gt;<br/><br/>
+</div>
+<!-- 正文结束 -->
+
+<!-- google 广告开始 -->
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-3436888182374005";
+/* fallever-1 */
+google_ad_slot = "7812475726";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<!-- google 广告结束 -->
+
+<!-- 评论列表开始 -->
+<div class="comment_list">
+	<h3>评论({{entry.comment_count}}条)</h3>
+	<br/>
+<a name="comment" style="display:none">comment</a>
+	{% for comment in comments_of_entry%}
+		<div class="entry_comment"><a name="{{comment.id}}"/>
+            <div class="metadata">
+			{%if comment.link %}
+				<a href="{{comment.link}}">{{comment.author_name|escape}}</a>
+			{% else %}
+				<a href="#">{{comment.author_name|escape}}</a>
+			{% endif%}在{{comment.comment_time|nice}}说：<b>{{comment.title|escape}}</b>
+            </div>
+			<div>
+				{{comment.content|linebreaks}}
+			</div>
+		</div>
+	{% endfor%}
+</div>
+<!-- 评论列表结束 -->
+
+<!-- 评论表单开始 -->
+{% if entry.comment_enable %}
+<div class="comment_form">
+	<form method="post" action="/post_comment/{{entry.id}}/" id="commentForm">
+        <fieldset id="cmment_fields">
+            <legend>留下您的高见</legend>
+				<p>
+					<label for="name">尊姓大名</label><br/>
+					<input id="name" name="name" value="{{user.username}}" class="input" size="30"/>
+				</p>
+				{%if user.is_authenticated %}
+				<input type="hidden" name="link" value="/user/{{user.id}}/"/>
+				{% else %}
+				<p>
+					<label for="link">网址</label><br/>
+					<input id="link" name="link" class="input" size="30"/>(可不填)
+				</p>
+				{%endif%}
+				<p>
+					<label for="title">标题</label><br/>
+					<input id="title" name="title" class="input" value="RE:{{entry.title}}" size="30"/>
+				</p>
+				<p>
+					<label for="content">您的评论</label><br/>
+					<textarea id="content" name="content" class="input" cols="80" rows="10"></textarea>
+				</p>
+				<p>
+					<label for="validate">算一算</label>
+					<span id="validate_code"></span>&nbsp;=&nbsp;
+					<input id="validate" class="input" name="validate_code" size="14"/>
+				</p>
+				<p>
+					<input id="submitBT" class="submit" type="submit" value="好了，现在就发言！"/>
+					<img id="loading" style="display:none" src="/resource/img/loading.gif"/>
+				</p>
+        </fieldset>
+	</form>
+	<br/>
+</div>
+<!-- 评论表单结束 -->
+ {% endif %}
+{% endblock %}
+

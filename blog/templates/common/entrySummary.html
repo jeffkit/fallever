@@ -1,0 +1,16 @@
+{%load dateFormat %}
+<div class="descr"><a href="/blog/{{entry.blog.shortcut}}/catelog/{{entry.catelog.id}}/"><img src="/resource/img/catelog.png"/>
+{% ifequal entry.catelog.name 'DEFAULT_CATELOG' %}
+	未分类
+{% else %}
+	{{entry.catelog.name}}
+{% endifequal%}
+</a>
+<a href="#"><img src="/resource/img/people.png"/>{{entry.author.username|escape}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;{{entry.create_at|nice }}
+
+<a href="/blog/{{entry.blog.shortcut}}/{{entry.id}}/#comment"><img src="/resource/img/comment.png">{{entry.comment_count}}</a>
+{%for tag in tags%}<a href="/blog/{{entry.blog.shortcut}}/tag/{{tag.id}}/"><img src="/resource/img/tag.png"/>{{tag.name}}</a>{%endfor%}
+
+{%ifequal entry.author.id user.id %}
+<a href="/admin/blog/entry/{{entry.id}}/"><img src="/resource/img/edit.png"/></a>{% endifequal%}
+</div>

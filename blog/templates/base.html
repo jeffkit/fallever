@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+{% autoescape off%}
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+<meta name="author" content="jeff@fallever.com"/> 
+<link rel="stylesheet" type="text/css" href="/resource/css/default.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/resource/css/highlight.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/resource/js/lightTreeview/jquery.lightTreeview.css" media="screen"/>
+<link href="/feeds/blog/{{blog.shortcut}}/rss.xml" rel="alternate" title="{{blog.caption}}" type="application/rss+xml" />
+<link rel="shortcut icon" href="/resource/img/small.png" type="image/x-icon" />
+{% block style %}{% endblock%}
+<script language="JavaScript" src="/resource/js/jquery.js"></script>
+<script language="JavaScript" src="/resource/js/lightTreeview/jquery.lightTreeview.js"></script>
+<script language="JavaScript" src="/resource/js/index.js"></script>	
+{% block script %}{% endblock%}
+<title>
+{% block title %}
+wellcom to my blog
+{% endblock %}
+</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="header">
+		{% block header %}{% endblock %}
+	</div>
+
+	<div class="main">
+		
+		<div class="body_content">
+			{% block content %}{% endblock %}
+		</div>
+
+		<div class="sidenav">
+			{% block sidenav %}{% endblock %}
+		</div>
+	
+		<div class="clearer"><span></span></div>
+
+	</div>
+
+</div>
+
+<div class="footer">&copy; 2007 <a href="http://www.fallever.com">www.fallever.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>
+</div>
+<!-- 开始Google 统计代码 -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5505202-3");
+pageTracker._trackPageview();
+</script>
+<!-- 结束Google 统计代码 -->
+</body>
+{% endautoescape %}
+</html>
