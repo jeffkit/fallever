@@ -1,6 +1,6 @@
 #coding=utf-8
 import os
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 #Fallever Blog的版本
@@ -41,9 +41,12 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/jeffjie/webapps/fallever_static'
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com"
@@ -52,7 +55,7 @@ MEDIA_URL = '/resource/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/resource/admin/'
+ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'm=kts8%hxptzc#@&21m67==66j4u07&dvp1$@5^fc=vqy)n6_i'
@@ -77,7 +80,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/jeffjie/webapps/fallever2/fallever/templates',
+	os.path.join(PROJECT_ROOT,'templates'),
 )
 
 INSTALLED_APPS = (
@@ -85,8 +88,8 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'grappelli',
-    'filebrowser',
+    #'grappelli',
+    #'filebrowser',
     'django.contrib.admin',
     'fallever.blog',
 )
@@ -98,9 +101,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 # filebrowser configs
-FILEBROWSER_URL_FILEBROWSER_MEDIA = '/resource/filebrowser/'
-FILEBROWSER_DEBUG = False
-FILEBROWSER_PATH_MEDIA = os.path.join(MEDIA_ROOT, 'filebrowser/')
+#FILEBROWSER_URL_FILEBROWSER_MEDIA = '/resource/filebrowser/'
+#FILEBROWSER_DEBUG = False
+#FILEBROWSER_PATH_MEDIA = os.path.join(MEDIA_ROOT, 'filebrowser/')
 
-GRAPPELLI_ADMIN_HEADLINE = 'Fallever'
-GRAPPELLI_ADMIN_TITLE = u'fallever 博客管理系统'
+#GRAPPELLI_ADMIN_HEADLINE = 'Fallever'
+#GRAPPELLI_ADMIN_TITLE = u'fallever 博客管理系统'
